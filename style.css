@@ -52,7 +52,11 @@ header {
 
 #future-content {
     display: flex;
-    gap: 15px;
+    gap: 20px;
+}
+
+.future-box {
+    width: 70%;
 }
 
 .evolution p {
@@ -63,6 +67,7 @@ header {
 
 
 .every {
+    display: flex;
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
@@ -110,13 +115,14 @@ h1 {
 }
 
 .news-content {
-    width: 300px;
+    padding: 0;
+    width: 30%;
     background-color: var(--very-dark-blue);
     margin: 0;
-
     list-style: none;
     color: var(--off-white);
-    padding: 35px;
+    padding: 2rem;
+    box-sizing: border-box;
 }
 
 .news-content h2 {
@@ -133,6 +139,7 @@ h1 {
 .news-content h3 a {
     text-decoration: none;
     color: var(--off-white);
+    transition: all 500ms;
 }
 
 .news-content h3 a:hover {
@@ -178,6 +185,7 @@ h1 {
     text-decoration: none;
     color: var(--very-dark-blue);
     font-size: 16px;
+    transition: all 500ms;
 }
 
 #other-content a:hover {
@@ -199,8 +207,45 @@ footer {
     text-decoration: none;
     color: var(--very-dark-blue);
     font-weight: 600;
+    transition: all 500ms;
 }
 
 .attribution a:hover {
     color: var(--soft-red);
+}
+
+@media (max-width: 946px) {
+    #future-content {
+        flex-direction: column;
+    }
+
+    #other-content {
+        display: none;
+    }
+
+    .future-box {
+        width: 100%;
+    }
+
+    .news-content {
+        width: 100%;
+    }
+}
+
+@media (max-width: 784px) {
+    .nav-links {
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start
+    }
+
+    .evolution,
+    .future {
+        grid-column: 1 / span 2;
+    }
 }
